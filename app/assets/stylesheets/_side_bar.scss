@@ -1,0 +1,49 @@
+.side-bar {
+  width: 300px;
+  background-color: #253141;
+  height: 100vh;
+  &__user-name {
+    height: 100px;
+    background-color: #253141;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    &__top-items {
+      background-color: #253141;
+      height: 20px;
+      width: 260px;
+      display: flex;
+      justify-content: space-between;
+      a {
+        color: #ffffff;
+        padding-left: 5px;
+        text-decoration: none;
+      }
+      &__name {
+        color: #ffffff;
+        font-size: 16px;
+      }
+    }
+  }
+  &__group-list {
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    padding: 0 20px;
+    
+    display: block;
+    &__group {
+      padding: 20px 20px 40px;
+      box-sizing: border-box;
+      color: #ffffff;
+      &__name {
+        font-size: 15px;
+      }
+      &__message {
+        font-size: 11px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+
