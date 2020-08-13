@@ -23,7 +23,8 @@
   .chat-main__message-form
     %form.chat-main__message-form__contents
       .chat-main__message-form__contents__inputbox
-        %input.chat-main__message-form__contents__inputbox__inputtext{"placeholder": "type a message", "type": "text"}
-          %label{class: "chat-main__message-form__contents__inputbox__inputtext__image"}
-            = icon('fas', 'image')
+        %input#image-label.chat-main__message-form__contents__inputbox__inputtext{"placeholder": "type a message", "type": "text"}
+          %label{class: "chat-main__message-form__contents__inputbox__inputtext__image"} 
+            = icon('far', 'image', class: "image")
+            %input{type: "file", class: "hidden"}
       %input.chat-main__message-form__contents__inputbox__submitbtn{"name": "commit","type": "submit", "value": "Send"}
