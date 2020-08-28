@@ -2,29 +2,21 @@
   .chat-main__group-info
     .chat-main__group-info__group
       .chat-main__group-info__group__groupname
-        test
+        = @group.name
       %ul.chat-main__group-info__group__memberlist
         Member：
         %li.chat-main__group-info__group__memberlist__member
-          masa
+          = @group.show_last_message
     .chat-main__group-info__editbutton
-      =link_to "#", class: "editbutton" do
+      =link_to edit_group_path(@group), class: "editbutton" do
         Edit
   .chat-main__message-list
-    .chat-main__message-list__messagebox
-      .chat-main__message-list__messagebox__messageinfo
-        .chat-main__message-list__messagebox__messageinfo__username
-          masa
-        .chat-main__message-list__messagebox__messageinfo__date
-          2019/11/20(Wed) 17:43:01
-      .chat-main__message-list__messagebox__message
-        %p.chat-main__message-list__messagebox__message__contents
-          おはよう
+    = render @messages
   .chat-main__message-form
-    %form.chat-main__message-form__contents
-      .chat-main__message-form__contents__inputbox
-        %input#image-label.chat-main__message-form__contents__inputbox__inputtext{"placeholder": "type a message", "type": "text"}
-          %label{class: "chat-main__message-form__contents__inputbox__inputtext__image"} 
-            = icon('far', 'image', class: "image")
-            %input{type: "file", class: "hidden"}
-      %input.chat-main__message-form__contents__inputbox__submitbtn{"name": "commit","type": "submit", "value": "Send"}
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      .chat-main__message-form__contents
+        = f.text_field :content, class: 'chat-main__message-form__contents__inputbox__inputtext', placeholder: 'type a message'
+        = f.label :image, class: 'chat-main__message-form__contents__inputbox__inputtext__image' do
+          = icon('far', 'image', class: 'image')
+          = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'chat-main__message-form__contents__inputbox__submitbtn'

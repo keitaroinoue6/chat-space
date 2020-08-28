@@ -78,7 +78,7 @@
       display: flex;
       justify-content: space-between;
       &__inputbox {
-        width: 100%;
+        width: 100px;
         position: relative;
         display: flex;
         &__inputtext {
@@ -88,7 +88,7 @@
           padding: 0 45px 0 15px;
           &__image {
             position: absolute;
-            right: 10px;
+            right: 200px;
             line-height: 50px;
           }
         }

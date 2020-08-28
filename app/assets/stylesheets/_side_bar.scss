@@ -29,7 +29,6 @@
     height: calc(100vh - 100px);
     background-color: #2f3e51;
     padding: 0 20px;
-    
     display: block;
     &__group {
       padding: 20px 20px 40px;
@@ -41,6 +40,9 @@
       &__message {
         font-size: 11px;
         margin-top: 5px;
+      }
+      a {
+        color: #ffffff;
       }
     }
   }
