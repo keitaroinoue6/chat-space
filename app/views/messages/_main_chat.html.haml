@@ -6,7 +6,8 @@
       %ul.chat-main__group-info__group__memberlist
         Member：
         %li.chat-main__group-info__group__memberlist__member
-          = @group.show_last_message
+          - @group.users.each do |user|
+            = user.name
     .chat-main__group-info__editbutton
       =link_to edit_group_path(@group), class: "editbutton" do
         Edit
